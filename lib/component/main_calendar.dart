@@ -15,6 +15,7 @@ class MainCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
+      locale: 'ko_kr',
       onDaySelected: onDaySelected,
       selectedDayPredicate: (date) =>
           date.year == selectedDate.year &&
@@ -61,6 +62,7 @@ class MainCalendar extends StatelessWidget {
           color: PRIMARY_COLOR,
         ),
       ),
+      daysOfWeekHeight: 30,
     );
   }
 }

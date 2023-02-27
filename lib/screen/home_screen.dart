@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calendar_scheduler/component/main_calendar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            MainCalendar(),
+          ],
+        ),
+      ),
+    );
   }
 }

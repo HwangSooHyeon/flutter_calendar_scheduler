@@ -19,7 +19,9 @@ class ScheduleProvider extends ChangeNotifier {
 
   void getSchedules({required DateTime date}) async {
     final response = await repository.getSchedules(date: date);
-    cache.update(date, (value) => response, ifAbsent: () => response);
+    cache.update(date, (value) => response, ifAbsent: () => response).sort(
+          (a, b) => a.startTime.compareTo(b.startTime),
+        );
     notifyListeners();
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_scheduler/model/schedule_model.dart';
 import 'package:flutter_calendar_scheduler/repository/schedule_repository.dart';
+import 'package:uuid/uuid.dart';
 
 class ScheduleProvider extends ChangeNotifier {
   final ScheduleRepository repository;
@@ -29,21 +30,42 @@ class ScheduleProvider extends ChangeNotifier {
     required ScheduleModel schedule,
   }) async {
     final targetDate = schedule.date;
-    final savedSchedule = await repository.createSchedule(schedule: schedule);
+    final uuid = Uuid();
+    final tempId = uuid.v4();
+    final newSchedule = schedule.copyWith(
+      id: tempId,
+    );
     cache.update(
       targetDate,
       (value) => [
         ...value,
-        schedule.copyWith(
-          id: savedSchedule,
-        ),
+        newSchedule,
       ]..sort(
           (a, b) => a.startTime.compareTo(
             b.startTime,
           ),
         ),
-      ifAbsent: () => [schedule],
+      ifAbsent: () => [newSchedule],
     );
+    notifyListeners();
+    try {
+      final savedSchedule = await repository.createSchedule(schedule: schedule);
+      cache.update(
+        targetDate,
+        (value) => value
+            .map((e) => e.id == tempId
+                ? e.copyWith(
+                    id: savedSchedule,
+                  )
+                : e)
+            .toList(),
+      );
+    } catch (e) {
+      cache.update(
+        targetDate,
+        (value) => value.where((element) => element.id != tempId).toList(),
+      );
+    }
     notifyListeners();
   }
 
@@ -51,12 +73,25 @@ class ScheduleProvider extends ChangeNotifier {
     required DateTime date,
     required String id,
   }) async {
-    final response = await repository.deleteSchedule(id: id);
+    final targetSchedule = cache[date]!.firstWhere(
+      (element) => element.id == id,
+    );
     cache.update(
       date,
       (value) => value.where((element) => element.id != id).toList(),
       ifAbsent: () => [],
     );
+    notifyListeners();
+    try {
+      await repository.deleteSchedule(id: id);
+    } catch (e) {
+      cache.update(
+        date,
+        (value) => [...value, targetSchedule]..sort(
+            (a, b) => a.startTime.compareTo(b.startTime),
+          ),
+      );
+    }
     notifyListeners();
   }
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369312760909",
+    "project_id": "flutter-calendar-schedule",
+    "storage_bucket": "flutter-calendar-schedule.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369312760909:android:3823b50289f7ef98868804",
+        "android_client_info": {
+          "package_name": "com.example.flutter_calendar_scheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369312760909-k09b1eq1sj7mqrg2j32unr2p2hd2nomu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADMeRPKPCWd7odXtuqL40aE_lxclUEfSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369312760909-k09b1eq1sj7mqrg2j32unr2p2hd2nomu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

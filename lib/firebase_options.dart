@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyADMeRPKPCWd7odXtuqL40aE_lxclUEfSQ',
-    appId: '1:369312760909:android:3823b50289f7ef98868804',
+    appId: '1:369312760909:android:1839f459ebfa0690868804',
     messagingSenderId: '369312760909',
     projectId: 'flutter-calendar-schedule',
     storageBucket: 'flutter-calendar-schedule.appspot.com',

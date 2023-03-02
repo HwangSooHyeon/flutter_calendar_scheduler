@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_calendar_scheduler">
+    package="ai.deploytest.calendarscheduler">
    <application
-        android:label="flutter_calendar_scheduler"
+        android:label="일정 관리 앱"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data

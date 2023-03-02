@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:369312760909:android:1839f459ebfa0690868804",
+        "android_client_info": {
+          "package_name": "ai.deploytest.calendarscheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369312760909-k09b1eq1sj7mqrg2j32unr2p2hd2nomu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADMeRPKPCWd7odXtuqL40aE_lxclUEfSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369312760909-k09b1eq1sj7mqrg2j32unr2p2hd2nomu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "369312760909-9mabgs56sh7921mib3b28e4ib96nkqmc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterCalendarScheduler"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:369312760909:android:3823b50289f7ef98868804",
         "android_client_info": {
           "package_name": "com.example.flutter_calendar_scheduler"
@@ -29,6 +65,13 @@
             {
               "client_id": "369312760909-k09b1eq1sj7mqrg2j32unr2p2hd2nomu.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "369312760909-9mabgs56sh7921mib3b28e4ib96nkqmc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterCalendarScheduler"
+              }
             }
           ]
         }

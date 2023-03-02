@@ -23,7 +23,7 @@ class MainCalendar extends StatelessWidget {
           date.day == selectedDate.day,
       firstDay: DateTime(1800, 1, 1),
       lastDay: DateTime(3000, 1, 1),
-      focusedDay: DateTime.now(),
+      focusedDay: selectedDate,
       headerStyle: HeaderStyle(
         titleCentered: true,
         formatButtonVisible: false,
@@ -35,15 +35,15 @@ class MainCalendar extends StatelessWidget {
       calendarStyle: CalendarStyle(
         isTodayHighlighted: false,
         defaultDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6.0),
+          //borderRadius: BorderRadius.circular(6.0),
           color: LIGHT_GREY_COLOR,
         ),
         weekendDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6.0),
+          //borderRadius: BorderRadius.circular(6.0),
           color: LIGHT_GREY_COLOR,
         ),
         selectedDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6.0),
+          //borderRadius: BorderRadius.circular(6.0),
           border: Border.all(
             color: PRIMARY_COLOR,
             width: 1.0,

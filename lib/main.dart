@@ -20,17 +20,10 @@ void main() async {
 
   final database = LocalDatabase();
 
-  final repository = ScheduleRepository();
-  final scheduleProvider = ScheduleProvider(repository: repository);
-
-  GetIt.I.registerSingleton<LocalDatabase>(database);
-
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => scheduleProvider,
-      child: MaterialApp(
-        home: HomeScreen(),
-      ),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     ),
   );
 }

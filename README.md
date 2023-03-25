@@ -1,16 +1,39 @@
 # flutter_calendar_scheduler
 
-A new Flutter project.
+---
 
-## Getting Started
+일정 관리 어플리케이션
 
-This project is a starting point for a Flutter application.
+## 💻 프로젝트 소개
 
-A few resources to get you started if this is your first Flutter project:
+--- 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+SQLite, REST API(Provider), Firestore를 사용해 일정을 저장하고 조회하는 기능을 구현한 프로젝트
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+현재 코드는 Firestore에 맞춰져 있음
+
+## 🕰️ 개발 환경
+
+---
+
+Language: Dart
+
+Framework: Flutter 3
+
+IDE: Android Studio
+
+API Server: NestJS
+
+Database: SQLite, Firestore
+
+## ⚙️ 주요 기능
+
+---
+
+### 어플리케이션 부분
+
+- HomeScreen
+    - 일정 추가 버튼을 클릭해 새로운 일정 입력 폼을 여는 기능
+    - 일정 폼에 정보를 입력해 새로운 일정을 생성할 수 있는 기능
+    - 달력 날짜를 선택하여 특정 날짜의 일정을 조회하는 기능
+    - 일정을 데이터베이스에 저장하는 기능
